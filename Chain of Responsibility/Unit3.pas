@@ -31,16 +31,20 @@ var
   _ADesconto: Double;
 begin
   _AOrcamento := TOrcamento.Create(StrToFloatDef(Edit1.Text, 0));
-  _AOrcamento.AdicionarItem(TItem.Create('Cafe', 200));
-  _AOrcamento.AdicionarItem(TItem.Create('Arroz', 300));
-  _AOrcamento.AdicionarItem(TItem.Create('Carne', 300));
-  _AOrcamento.AdicionarItem(TItem.Create('Feijão', 300));
-  // _AOrcamento.AdicionarItem(TItem.Create('Arroz', 300));
-  // _AOrcamento.AdicionarItem(TItem.Create('Arroz', 300));
+  try
+    _AOrcamento.AdicionarItem(TItem.Create('Cafe', 200));
+    _AOrcamento.AdicionarItem(TItem.Create('Arroz', 300));
+    _AOrcamento.AdicionarItem(TItem.Create('Carne', 300));
+    _AOrcamento.AdicionarItem(TItem.Create('Feijão', 300));
+    // _AOrcamento.AdicionarItem(TItem.Create('Arroz', 300));
+    // _AOrcamento.AdicionarItem(TItem.Create('Arroz', 300));
 
-  _ADesconto := TCalculadorDeDescontos.Calcular(_AOrcamento);
-  ShowMessage(_ADesconto.ToString);
+    _ADesconto := TCalculadorDeDescontos.Calcular(_AOrcamento);
+    ShowMessage(_ADesconto.ToString);
 
+  finally
+    _AOrcamento.Free;
+  end;
   // TTesteDesconto.Create();
 end;
 

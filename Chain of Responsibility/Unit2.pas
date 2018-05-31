@@ -170,15 +170,15 @@ begin
   _AFeijao := _AOrcamento.FItens.ContainsKey('Feijão');
 
   // for _AItem in _AOrcamento.FItens do
- { for _AItem in _AOrcamento.FItens.Values do
-  begin
+  { for _AItem in _AOrcamento.FItens.Values do
+    begin
     if not _AArroz then
-      _AArroz := (_AItem.FNome.Equals('Arroz'));
+    _AArroz := (_AItem.FNome.Equals('Arroz'));
 
     if not _AFeijao then
-      _AFeijao := (_AItem.FNome.Equals('Feijão'));
-  end;
-       }
+    _AFeijao := (_AItem.FNome.Equals('Feijão'));
+    end;
+  }
 
   Result := (_AArroz = _AFeijao);
 end;
