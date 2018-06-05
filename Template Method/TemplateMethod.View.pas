@@ -32,6 +32,12 @@ var
 begin
   _AOrcamento := TOrcamento.Create(StrToFloatDef(Edit1.Text, 100));
   try
+
+    _AOrcamento.AdicionarItem(TItem.Create('Cafe', 200));
+    _AOrcamento.AdicionarItem(TItem.Create('Arroz', 300));
+    _AOrcamento.AdicionarItem(TItem.Create('Carne', 300));
+    _AOrcamento.AdicionarItem(TItem.Create('Feijão', 300));
+
     _AIcpp := TIcpp.Create;
     _AIkcv := TIkcv.Create;
 
